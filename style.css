@@ -1,0 +1,674 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, #4C6085, #1E283F);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+.logo{
+    margin-left: 50px;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 30px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff; /* Set your default text color */
+    font-size: 18px;
+    font-weight: 300;
+    position: relative; /* Set the position to relative for the ::after pseudo-element */
+}
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px; /* Adjust the thickness of the underline as needed */
+    background-color: #ff004f; /* Set the color of the underline */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.7s; /* Add a smooth transition for the underline width */
+}
+
+nav ul li a:hover::after,
+nav ul li a:active::after {
+    width: 100%; /* Expand the underline to 100% width on hover and click */
+}
+
+p{
+    color: #333333;
+}
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 50px;
+
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+#text{
+    flex-basis: 40%;
+}
+
+.section-title {
+    font-size: 40px;
+    font-weight: 500;
+    color: #000000; /* A deep purple color */
+    margin-bottom: 20px;
+}
+.header{
+    background: radial-gradient(#fff, #f1eb92);
+}
+.header .row {
+    margin-top: 70px;
+}
+.col-2 .image-slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    overflow: hidden;
+    padding-bottom: 40px;
+    border-radius: 7px;
+}
+
+.slide {
+    width: 100%; /* Set the width to 100% to match the container */
+    height: 400px;
+    display: none;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.small-container .btn{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* ---------- products -----*/
+.small-container{
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.col-4 {
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    max-height: 500px;
+    transition: transform 0.5s;
+}
+.col-4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is the default for most images, it might cut off parts of the image. */
+}
+
+.col-4 img.tall {
+    object-fit: contain; /* For images with a taller aspect ratio, this ensures the entire image fits without cropping. */
+}
+
+.col-4 img.wide {
+    object-fit: contain; /* For images with a wider aspect ratio, this ensures the entire image fits without cropping. */
+}
+
+.title{
+    text-align: center;
+    margin: 20px auto 40px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+.title::after{
+    content: '';
+    background: #ff523b;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+h4{
+    color: #555;
+    font-weight: normal;
+}
+.col-4 p{
+    font-size: 14px;
+}
+.rating .fa{
+    color: #ff523b;
+}
+.col-4:hover{
+    transform: translateY(-5px);
+    
+}
+
+
+.product-box img {
+    width: 100%; /* Set the width to 100% to match the container */
+    height: 300px; /* Set the height you desire for all the images */
+    object-fit: cover; /* Maintain the aspect ratio and cover the container */
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.product-box img:hover {
+    border-color:   #007BFF;
+    transition: border-color 0.3s;
+}
+
+
+/*-----------------  product details page ----------*/
+.product-details{
+    margin: 50px 50px;
+    padding: 10px 30px;
+}
+.product-details .col-2 img{
+    padding: 0;
+    max-height: 400px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.product-details .col-2{
+    padding: 10px;
+}
+.product-details .col-2 .rating{
+    margin-top: 10px;
+}
+.product-details h4{
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+
+}
+.single-product .fa{
+    color: #ff523b;
+    margin-left: 10px;
+}
+.btn{
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 30px;
+    margin-top: 80px;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #563434;
+}
+.product-details .col-2 .btn i {
+    margin-left: 10px; /* Add space between the button text and the icon */
+}
+.small-img-row{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+.small-img-container {
+    position: relative;
+}
+
+.small-img-container img {
+    transition: transform 0.3s ;
+}
+
+.small-img-container:hover img {
+    transform: translateY(-8px); /* You can adjust the scale factor as needed for the desired zoom level */
+    border: 2px solid #ff523b;
+
+}
+
+
+
+
+
+
+
+
+/*---------------- footer --------------*/
+
+.footer{
+    margin-top: 10px;
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+    padding-top: 60px;
+}
+.footer p{
+    columns: #8a8a8a;
+}
+.footer h3{
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+.footer-col-1{
+    flex-basis: 30%;
+}
+.footer-col-2{
+    flex: 1;
+    text-align: center;
+}
+.footer-col-2 img{
+    width: 180px;
+    margin-bottom: 20px;
+}
+.footer-col-3, .footer-col-4{
+    flex-basis: 12%;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+}
+.app-logo{
+    margin-top: 20px;
+}
+.app-logo img{
+    width: 140px;
+}
+.footer hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+.copyright{
+    text-align: center;
+}
+.menu-icon{
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+}
+
+.copyright{
+    text-align: center;
+}
+
+/*------- product page pagination --------*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+}
+
+.pagination button.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.pagination button.previous-page,
+.pagination button.next-page {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.pagination button.ellipsis {
+    cursor: default;
+}
+
+
+
+/*------------ About us -------------*/
+
+
+.content{
+    padding: 10px;
+    margin: 40px;
+}
+.about{
+    margin: 20px 80px;
+}
+/* Style headings */
+
+
+
+.about p {
+    margin: 10px 10px 20px;
+    color: rgb(14, 12, 11); /* Text color */
+    line-height: 1.4; /* Line height for readability */
+}
+.about ul {
+    list-style-type: disc; /* Use disc for bullet points */
+    margin-left: 20px; /* Adjust the left margin for spacing */
+    padding-left: 20px; /* Adjust the left padding for spacing */
+    color: rgb(14, 12, 11);
+}
+
+
+
+
+.about h1, .about h3 {
+    text-align: left; /* Align the text to the left */
+    margin: 0 0 10px; /* Remove horizontal margin and keep 80px margin at the bottom */
+    position: relative;
+    line-height: 60px;
+    color: #222;
+}
+
+.about h1::after, .about h3::after {
+    content: '';
+    background: #ff523b;
+    width: 0; /* Initially set the width to 0 to hide the line */
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    transition: width 0.3s; /* Add a transition for the width property */
+}
+
+.about h1:hover::after, .about h3:hover::after {
+    width: 80px; /* Increase the width on hover to show the line */
+}
+
+/* Initially, set the scale to 1 (no zoom) */
+.about h1 + p, .about h3 + p, .about h3 + ul {
+    transform: scale(1);
+    transition: transform 0.3s; /* Add a transition for the zoom effect */
+}
+
+/* On heading hover, zoom in the first paragraph below the heading */
+.about h1:hover + p, .about h3:hover + p {
+    transform: scale(1.1); /* Adjust the scale value for the desired zoom effect */
+}
+.about h3:hover + ul {
+    transform: scale(1.2); /* Zoom in the unordered list */
+}
+
+
+/* Apply styles to the team members section */
+.team {
+    text-align: center;
+}
+
+.team .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style individual team members */
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 80px;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+    transition: transform 0.5s;
+}
+
+/* Style team member images with a circular shape */
+.team-member img {
+    width: 150px; /* Adjust the width of the member photos */
+    height: 150px; /* Set a square height to maintain aspect ratio */
+    border-radius: 50%; /* Make the image circular */
+    border: 2px solid transparent;
+}
+
+.team-member h3 {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.team-member p {
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+}
+.team-member:hover {
+    transform: scale(1.1); /* Zoom in by 10% */
+}
+.team-member:hover img {
+    border-color: #19347e; /* Change the border color to your desired color */
+}
+
+.About-us{
+    background: rgb(233, 223, 231);
+}
+
+
+/* -------- Contact -------*/
+
+#contact {
+    background: rgb(134, 53, 53)ccc;
+}
+
+.contact-left {
+    flex-basis: 35%;
+    margin-top: 30px;
+}
+
+.contact-right {
+    flex-basis: 60%;
+    margin-top: 30px;
+}
+
+.contact-left p {
+    margin-top: 30px;
+}
+
+.contact-left p i {
+    color: #19347e;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #19347e;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+    color: #ff5733;
+    transform: translateY(-5px);
+}
+
+.contact-form {
+    width: 100%;
+    text-align: center; /* Center-align the form elements */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #585858;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fdfcfc;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+.btn2 {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff004f;
+    color: #fdfcfc;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn2:hover {
+    background: #ff0022; /* Change the background color on hover */
+    transform: translateY(-5px); /* Move the button up on hover */
+}
+
+.btn2:active {
+    background: #d83939; /* Change the background color on click */
+    transform: translateY(0); /* Reset the button position on click */
+}
+
+
+.sub-title{
+    text-align: left; /* Align the text to the left */
+    margin: 0 0 10px; /* Remove horizontal margin and keep 80px margin at the bottom */
+    position: relative;
+    line-height: 60px;
+    color: #222;
+}
+
+.sub-title::after {
+    content: '';
+    background: #5431d6;
+    width: 0; /* Initially set the width to 0 to hide the line */
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    transition: width 0.5s; /* Add a transition for the width property */
+}
+.sub-title:hover::after {
+    width: 80px; /* Increase the width on hover to show the line */
+}
+
+
+
+
+
+/* Add this CSS in a separate style.css file or in a <style> tag in your HTML */
+
+.cart-container {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 80%; /* Adjust the width as needed */
+    margin-bottom: 20px;
+}
+
+.cart-items {
+    margin: 20px 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.cart-item img {
+    max-width: 200px;
+    max-height: 200px;
+    margin-right: 30px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+    margin: 10px 30px;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.cart-item-details button {
+    background-color: #ff523b;
+    width: 100px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    margin-top: 20px;
+}
+
+.cart-item-details button:hover {
+    background-color: #563434;
+}

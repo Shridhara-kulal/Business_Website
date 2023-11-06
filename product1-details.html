@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Business Website</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >    
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="Images/logo.png" width="200px" height="100px"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                </nav>
+            </div>     
+    </div>
+
+
+        <div class="product-details">
+            <div class="row">
+                <div class="col-2">
+                    <img src="Images/small-p1.png" width="100%" id="ProductImg">
+                    
+                    <div class="small-img-row">
+                        <div class="small-img-col">
+                            <div class="small-img-container">
+                                <img src="images/small-p1.png" width="100%" class="small-img">
+                            </div>
+                        </div>
+                        <div class="small-img-col">
+                            <div class="small-img-container">
+                                <img src="images/small2-p1.png" width="100%" class="small-img">
+                            </div>
+                        </div>
+                        <div class="small-img-col">
+                            <div class="small-img-container">
+                                <img src="images/product1.png" width="100%" class="small-img">
+                            </div>
+                        </div>
+                        <div class="small-img-col">
+                            <div class="small-img-container">
+                                <img src="images/small3-p1.png" width="100%" class="small-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <h1>Tea-Cups(Pack of 6)</h1>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <h4>&#8377 499.00</h4>
+                    <h3>Product Details <i class="fa fa-indent"></i></h3>
+                    <br>
+                    <p>Give your summer wardrobe a style upgrade with the HRX Men's Active T-Shirt. Team it with a pair
+                        of shorts for your morning workout or a denims for an evening out with the guys.
+                    </p>
+
+                    <a href="javascript:void(0);" class="btn" onclick="addToCart(this)">Add to Cart <i class="fa fa-shopping-cart"></i></a>
+                    <a href="cart.html" class="btn">View Cart</a>
+                    <a href="" class="btn">  Buy Now  </a>
+                </div>
+            </div>
+        </div>
+
+
+        
+
+
+<!------------------ footer--------------->
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-1">
+                        <h3>Download Our App</h3>
+                        <p>Download App for Android and ios mobile phone.</p>
+                        <div class="app-logo">
+                            <img src="images/play-store.png">
+                            <img src="images/app-store.png">
+                        </div>
+                    </div>
+                    <div class="footer-col-2">
+                        <img src="images/logo.png" width="250px" height="75px">
+                        <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+                    </div>
+                    <div class="footer-col-3">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li>Coupons</li>
+                            <li>Blog Post</li>
+                            <li>Return Policy</li>
+                            <li>Join Affiliate</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-4">
+                        <h3>Follow us</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Instagram</li>
+                            <li>You Tube</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="copyright">Copyright &copy; 2023-All Rights Reserved</p>
+            </div>
+        </div>
+
+
+
+
+       <!------------------- js for produt gallery----------------->
+<script>
+    var ProductImg = document.getElementById("ProductImg");
+    var SmallImg = document.getElementsByClassName("small-img");
+    SmallImg[0].onclick = function(){
+        ProductImg.src = SmallImg[0].src;
+    }
+    SmallImg[1].onclick = function(){
+        ProductImg.src = SmallImg[1].src;
+    }
+    SmallImg[2].onclick = function(){
+        ProductImg.src = SmallImg[2].src;
+    }
+    SmallImg[3].onclick = function(){
+        ProductImg.src = SmallImg[3].src;
+    }
+
+</script>
+
+
+
+<script>
+    function addToCart(button) {
+    // Get product details
+    var productImage = document.getElementById("ProductImg").src;
+    var productName = document.querySelector(".product-details h1").innerText;
+    var productPrice = document.querySelector(".product-details h4").innerText;
+
+    // Remove the currency symbol, trim spaces, and convert the price to a number
+    productPrice = parseFloat(productPrice.replace(/[^0-9.]/g, ""));
+
+    // Create a cart item object
+    var cartItem = {
+        images: [productImage], // An array of image URLs
+        name: productName,
+        price: productPrice
+    };
+
+    // Check if the cart is empty in local storage
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Add the item to the cart
+    cart.push(cartItem);
+
+    // Save the cart back to local storage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Provide user feedback (you can enhance this with better styling)
+    button.innerText = "Added to Cart";
+    button.disabled = true;
+}
+
+
+</script>
+
+
+
+
+    </body>
+    
+
+</html>
